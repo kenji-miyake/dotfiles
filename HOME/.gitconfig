@@ -1,0 +1,9 @@
+[user]
+  name = Kenji Miyake
+  email = 31987104+kenji-miyake@users.noreply.github.com
+[core]
+  editor = vim
+  autocrlf = input
+  ignorecase = false
+[credential]
+  helper = cache
