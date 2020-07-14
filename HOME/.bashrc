@@ -7,6 +7,9 @@ esac
 # Original .bashrc
 source /etc/skel/.bashrc
 
+# Add user's private bin to PATH
+export PATH="$HOME/.local/bin:$PATH"
+
 # ROS
 if [ -d "/opt/ros" ]; then
     source /opt/ros/foxy/setup.bash
