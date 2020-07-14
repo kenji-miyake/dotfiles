@@ -11,6 +11,7 @@ source /etc/skel/.bashrc
 if [ -d "/opt/ros" ]; then
     source /opt/ros/foxy/setup.bash
     source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
+    export ROSCONSOLE_FORMAT='[${severity}] [${time}] [${node}]: ${message}'
 fi
 
 # Python
