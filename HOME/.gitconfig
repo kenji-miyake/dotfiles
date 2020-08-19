@@ -7,3 +7,9 @@
   ignorecase = false
 [credential]
   helper = cache
+[init]
+  defaultBranch = main
+[pull]
+  ff = only
+[merge]
+  ff = false
