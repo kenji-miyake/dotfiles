@@ -1,6 +1,3 @@
 # ROS
 set -q ROS_DISTRO && source /opt/ros/$ROS_DISTRO/share/rosbash/rosfish
-
-if command -v register-python-argcomplete >/dev/null 2>&1
-    register-python-argcomplete --shell fish colcon | .
-end
+alias colcon='__colcon_find_workspace_dir > /dev/null && cd (__colcon_find_workspace_dir); command colcon'
