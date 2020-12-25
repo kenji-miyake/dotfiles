@@ -21,8 +21,10 @@ fi
 export PYTHONBREAKPOINT=IPython.embed
 
 # CCache
-export CC="/usr/lib/ccache/gcc"
-export CXX="/usr/lib/ccache/g++"
+if command -v ccache > /dev/null 2>&1; then
+  export CC="/usr/lib/ccache/gcc"
+  export CXX="/usr/lib/ccache/g++"
+fi
 
 # CUDA
 export PATH="/usr/local/cuda/bin:$PATH"
