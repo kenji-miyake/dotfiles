@@ -15,6 +15,11 @@ if [ -d "/opt/ros" ]; then
     source /opt/ros/foxy/setup.bash
     source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
     export ROSCONSOLE_FORMAT='[${severity}] [${time}] [${node}]: ${message}'
+
+    # custom rqt_multiplot
+    if [ "$ROS_VERSION" = "1" ]; then
+      source ~/rqt_multiplot_ws/install/setup.bash
+    fi
 fi
 
 # Python
