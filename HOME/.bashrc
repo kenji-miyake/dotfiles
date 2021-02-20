@@ -27,8 +27,8 @@ export PYTHONBREAKPOINT=IPython.embed
 
 # CCache
 if command -v ccache > /dev/null 2>&1; then
-  export CC="/usr/lib/ccache/gcc"
-  export CXX="/usr/lib/ccache/g++"
+    export CC="/usr/lib/ccache/gcc"
+    export CXX="/usr/lib/ccache/g++"
 fi
 
 # CUDA
@@ -36,10 +36,9 @@ export PATH="/usr/local/cuda/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
 
 # Rust
-if command -v cargo > /dev/null 2>&1; then
-  source $HOME/.cargo/env
+if test -f $HOME/.cargo/env; then
+    source $HOME/.cargo/env
 fi
-
 # Snap
 export PATH="/snap/bin:$PATH"
 
