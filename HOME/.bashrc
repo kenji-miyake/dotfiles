@@ -18,7 +18,8 @@ if [ -d "/opt/ros" ]; then
 
     # custom rqt_multiplot
     if [ "$ROS_VERSION" = "1" ]; then
-      source ~/rqt_multiplot_ws/install/setup.bash
+        source ~/rqt_multiplot_ws/install/setup.bash
+        source ~/missing_noetic_pkgs/install/setup.bash
     fi
 fi
 
