@@ -10,3 +10,12 @@ trim_trailing_whitespace = true
 
 [*.md]
 trim_trailing_whitespace = false
+
+[*.py]
+indent_size = 4
+
+[*.fish]
+indent_size = 4
+
+[*.{sh,bashrc}]
+indent_size = 4
