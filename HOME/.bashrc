@@ -1,7 +1,7 @@
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
-      *) return;;
+    *) return;;
 esac
 
 # Original .bashrc
@@ -13,6 +13,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # ROS
 if [ -d "/opt/ros" ]; then
     source /opt/ros/foxy/setup.bash
+
     source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
     export ROSCONSOLE_FORMAT='[${severity}] [${time}] [${node}]: ${message}'
 
