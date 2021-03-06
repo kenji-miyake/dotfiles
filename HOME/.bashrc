@@ -12,15 +12,25 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # ROS
 if [ -d "/opt/ros" ]; then
-    source /opt/ros/foxy/setup.bash
+    test "$ROS_DISTRO" = "" && export ROS_DISTRO=foxy
+    if [ "$ROS_DISTRO" = "rolling" ]; then
+        source /opt/ros/rolling/setup.bash
+    elif [ "$ROS_DISTRO" = "foxy" ]; then
+        source /opt/ros/foxy/setup.bash
+    elif [ "$ROS_DISTRO" = "noetic" ]; then
+        source /opt/ros/noetic/setup.bash
+    else
+        echo "Invalid ROS_DISTRO `$ROS_DISTRO` was given."
+    fi
 
     source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
-    export ROSCONSOLE_FORMAT='[${severity}] [${time}] [${node}]: ${message}'
 
-    # custom rqt_multiplot
     if [ "$ROS_VERSION" = "1" ]; then
+        export ROSCONSOLE_FORMAT='[${severity}] [${time}] [${node}]: ${message}'
         source ~/rqt_multiplot_ws/install/setup.bash
         source ~/missing_noetic_pkgs/install/setup.bash
+    elif [ "$ROS_VERSION" = "2" ]; then
+        export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity} {time}] [{name}]: {message}"
     fi
 fi
 
@@ -41,6 +51,7 @@ export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
 if test -f $HOME/.cargo/env; then
     source $HOME/.cargo/env
 fi
+
 # Snap
 export PATH="/snap/bin:$PATH"
 
