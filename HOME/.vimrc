@@ -18,7 +18,7 @@ command! PackClean  call PackInit() | call minpac#clean()
 command! PackStatus packadd minpac | call minpac#status()
 
 " Plugin settings
-au BufWrite * :Autoformat
+" au BufWrite * :Autoformat
 
 nmap <C-_> <Plug>(caw:hatpos:toggle)
 vmap <C-_> <Plug>(caw:hatpos:toggle)
@@ -35,6 +35,9 @@ set autoread
 set hidden
 set nobackup
 set noswapfile
+
+" File Type
+autocmd BufNewFile,BufRead *.repos set filetype=yaml
 
 " Encoding
 set encoding=utf-8
