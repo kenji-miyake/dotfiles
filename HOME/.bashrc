@@ -30,6 +30,7 @@ if [ -d "/opt/ros" ]; then
         source ~/rqt_multiplot_ws/install/setup.bash
         source ~/missing_noetic_pkgs/install/setup.bash
     elif [ "$ROS_VERSION" = "2" ]; then
+        export RCUTILS_COLORIZED_OUTPUT=1
         export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity} {time}] [{name}]: {message}"
     fi
 fi
