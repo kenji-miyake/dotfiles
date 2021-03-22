@@ -32,6 +32,8 @@ if [ -d "/opt/ros" ]; then
     elif [ "$ROS_VERSION" = "2" ]; then
         export RCUTILS_COLORIZED_OUTPUT=1
         export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity} {time}] [{name}]: {message}"
+        export ROS_DOMAIN_ID=19
+        export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
     fi
 fi
 
