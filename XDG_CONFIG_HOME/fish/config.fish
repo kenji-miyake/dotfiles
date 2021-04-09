@@ -16,3 +16,13 @@ if [ "$ROS_VERSION" = "1" ]
 else if [ "$ROS_VERSION" = "2" ]
     register-python-argcomplete --shell fish ros2 | source
 end
+
+# Reload
+function reload_if_rosdistro_mixed
+    if [ "$AUTO_SOURCE_PREV_ROS_DISTRO" != "$ROS_DISTRO" ]
+        clear
+        reload -c as -e 'ROS_DISTRO=$ROS_DISTRO'
+    end
+end
+
+set -U AUTO_SOURCE_AFTER_SOURCE_COMMAND 'reload_if_rosdistro_mixed'
