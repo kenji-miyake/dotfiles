@@ -14,13 +14,15 @@ export PATH="$HOME/.local/bin:$PATH"
 if [ -d "/opt/ros" ]; then
     test "$ROS_DISTRO" = "" && export ROS_DISTRO=foxy
     if [ "$ROS_DISTRO" = "rolling" ]; then
-        source /opt/ros/rolling/setup.bash
+        source ~/ros2_rolling/install/setup.bash
     elif [ "$ROS_DISTRO" = "foxy" ]; then
         source /opt/ros/foxy/setup.bash
+        source ~/ros2_overlay_ws/install/setup.bash
+        export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
     elif [ "$ROS_DISTRO" = "noetic" ]; then
         source /opt/ros/noetic/setup.bash
     else
-        echo "Invalid ROS_DISTRO `$ROS_DISTRO` was given."
+        echo "Invalid ROS_DISTRO $ROS_DISTRO was given."
     fi
 
     source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
@@ -32,8 +34,7 @@ if [ -d "/opt/ros" ]; then
     elif [ "$ROS_VERSION" = "2" ]; then
         export RCUTILS_COLORIZED_OUTPUT=1
         export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity} {time}] [{name}]: {message}"
-        export ROS_DOMAIN_ID=19
-        export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+        export ROS_LOCALHOST_ONLY=1
     fi
 fi
 
