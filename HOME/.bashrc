@@ -14,7 +14,7 @@ export PATH="$HOME/.local/bin:$PATH"
 if [ -d "/opt/ros" ]; then
     test "$ROS_DISTRO" = "" && export ROS_DISTRO=foxy
     if [ "$ROS_DISTRO" = "rolling" ]; then
-        source ~/ros2_rolling/install/setup.bash
+        source /opt/ros/rolling/setup.bash
     elif [ "$ROS_DISTRO" = "foxy" ]; then
         source /opt/ros/foxy/setup.bash
         source ~/ros2_overlay_ws/install/setup.bash
