@@ -12,13 +12,11 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # ROS
 if [ -d "/opt/ros" ]; then
-    test "$ROS_DISTRO" = "" && export ROS_DISTRO=foxy
+    test "$ROS_DISTRO" = "" && export ROS_DISTRO=galactic
     if [ "$ROS_DISTRO" = "rolling" ]; then
         source /opt/ros/rolling/setup.bash
-    elif [ "$ROS_DISTRO" = "foxy" ]; then
-        source /opt/ros/foxy/setup.bash
-        source ~/ros2_overlay_ws/install/setup.bash
-        export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+    elif [ "$ROS_DISTRO" = "galactic" ]; then
+        source /opt/ros/galactic/setup.bash
     elif [ "$ROS_DISTRO" = "noetic" ]; then
         source /opt/ros/noetic/setup.bash
     else
@@ -29,8 +27,6 @@ if [ -d "/opt/ros" ]; then
 
     if [ "$ROS_VERSION" = "1" ]; then
         export ROSCONSOLE_FORMAT='[${severity}] [${time}] [${node}]: ${message}'
-        source ~/rqt_multiplot_ws/install/setup.bash
-        source ~/missing_noetic_pkgs/install/setup.bash
     elif [ "$ROS_VERSION" = "2" ]; then
         export RCUTILS_COLORIZED_OUTPUT=1
         export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity} {time}] [{name}]: {message}"
@@ -50,6 +46,7 @@ fi
 # CUDA
 export PATH="/usr/local/cuda/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/usr/local/libtorch/lib:$LD_LIBRARY_PATH"
 
 # Rust
 if test -f $HOME/.cargo/env; then
