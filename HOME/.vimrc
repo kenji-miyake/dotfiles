@@ -11,6 +11,7 @@ function! PackInit() abort
   call minpac#add('nathanaelkane/vim-indent-guides')
   call minpac#add('bronson/vim-trailing-whitespace')
   call minpac#add('thinca/vim-zenspace')
+  call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
 endfunction
 
 command! PackUpdate call PackInit() | call minpac#update()
@@ -24,6 +25,25 @@ nmap <C-_> <Plug>(caw:hatpos:toggle)
 vmap <C-_> <Plug>(caw:hatpos:toggle)
 
 let g:indent_guides_enable_on_vim_startup = 1
+
+"" coc.nvim
+function! CocSetup() abort
+  execute 'CocInstall coc-spell-checker'
+endfunction
+
+command! CocSetup call CocSetup()
+
+""" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+"""
 
 " General
 syntax enable
