@@ -65,6 +65,7 @@ set fileencoding=utf-8
 
 " UI
 colorscheme desert
+set term=xterm-256color
 set number
 set cursorline
 set ruler
