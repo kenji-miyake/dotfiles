@@ -56,8 +56,6 @@ fi
 # Snap
 export PATH="/snap/bin:$PATH"
 
-# Linuxbrew
-test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 # Fish Shell
 if [ -z "$FISH_VERSION" ]; then
