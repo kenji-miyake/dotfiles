@@ -1,6 +1,9 @@
 # Set $SHELL for venv in VSCode
 set SHELL (which fish)
 
+# ripgrep
+alias rg="rg --hidden --glob '!.git'"
+
 # pipx
 register-python-argcomplete --shell fish pipx | source
 
