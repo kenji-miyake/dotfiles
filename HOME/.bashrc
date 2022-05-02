@@ -29,7 +29,7 @@ if [ -d "/opt/ros" ]; then
 fi
 
 # Python
-export PYTHONBREAKPOINT=IPython.embed
+# export PYTHONBREAKPOINT=IPython.embed # Comment out to use pdb++
 
 # CCache
 if command -v ccache > /dev/null 2>&1; then
