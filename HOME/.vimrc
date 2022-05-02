@@ -10,6 +10,7 @@ function! PackInit() abort
   call minpac#add('tyru/caw.vim')
   call minpac#add('nathanaelkane/vim-indent-guides')
   call minpac#add('bronson/vim-trailing-whitespace')
+  call minpac#add('dag/vim-fish')
   call minpac#add('thinca/vim-zenspace')
   call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
 endfunction
