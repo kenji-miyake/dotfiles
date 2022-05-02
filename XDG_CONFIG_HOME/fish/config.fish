@@ -23,3 +23,6 @@ function reload_if_rosdistro_mixed
 end
 
 set -U AUTO_SOURCE_AFTER_SOURCE_COMMAND reload_if_rosdistro_mixed
+
+# Zellij
+abbr -a t 'nohup x-terminal-emulator > /dev/null 2>&1 & && disown %1'
