@@ -5,3 +5,6 @@ log/
 
 # Visual Studio Code
 .vscode/
+
+# git-submodule
+.gitmodules
