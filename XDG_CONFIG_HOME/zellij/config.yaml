@@ -1,0 +1,8 @@
+keybinds:
+  unbind: [Ctrl: "g"]
+  normal:
+    - action: [SwitchToMode: Locked]
+      key: [Alt: "g"]
+  locked:
+    - action: [SwitchToMode: Normal]
+      key: [Alt: "g"]
