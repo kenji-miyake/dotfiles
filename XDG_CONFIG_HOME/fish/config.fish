@@ -11,14 +11,8 @@ register-python-argcomplete --shell fish pipx | source
 alias colcon='__colcon_find_workspace_dir > /dev/null && cd (__colcon_find_workspace_dir); command colcon'
 
 # ROS
-abbr -a rpf "ros2 pkg prefix --share"
+register-python-argcomplete --shell fish ros2 | source
 alias roscd="ccd -o"
-
-if [ "$ROS_VERSION" = 1 ]
-    source /opt/ros/noetic/share/rosbash/rosfish
-else if [ "$ROS_VERSION" = 2 ]
-    register-python-argcomplete --shell fish ros2 | source
-end
 
 # Reload
 function reload_if_rosdistro_mixed
