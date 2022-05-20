@@ -1,3 +1,4 @@
+scroll_buffer_size: 1000000
 keybinds:
   unbind: [Ctrl: "g"]
   normal:
