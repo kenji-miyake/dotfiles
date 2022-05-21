@@ -8,3 +8,6 @@ log/
 
 # git-submodule
 .gitmodules
+
+# CSpell
+.cspell.json
