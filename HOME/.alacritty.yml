@@ -1,0 +1,2 @@
+key_bindings:
+  - { key: Plus, mods: Control|Shift, action: IncreaseFontSize }
