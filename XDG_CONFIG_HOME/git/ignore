@@ -11,3 +11,6 @@ log/
 
 # CSpell
 .cspell.json
+
+# npm
+node_modules/
