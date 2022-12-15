@@ -14,3 +14,6 @@ log/
 
 # npm
 node_modules/
+
+# CodeChecker
+.codechecker/
