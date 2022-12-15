@@ -4,6 +4,9 @@ set SHELL (which fish)
 # ripgrep
 alias rg="rg --hidden --glob '!.git'"
 
+# zoxide
+zoxide init fish | source
+
 # pipx
 register-python-argcomplete --shell fish pipx | source
 
