@@ -50,6 +50,12 @@ fi
 # Snap
 export PATH="/snap/bin:$PATH"
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv > /dev/null 2>&1; then
+    eval "$(pyenv init -)"
+fi
 
 # Fish Shell
 if [ -z "$FISH_VERSION" ]; then
