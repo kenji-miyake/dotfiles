@@ -8,5 +8,6 @@ kenji-miyake/colcon-abbr.fish
 kenji-miyake/colcon-extensions.fish
 kenji-miyake/reload.fish
 kenji-miyake/vcd.fish
+kenji-miyake/zellij.fish
 oh-my-fish/plugin-pbcopy
 pure-fish/pure
