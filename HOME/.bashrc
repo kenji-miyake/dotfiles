@@ -59,7 +59,5 @@ fi
 
 # Fish Shell
 if [ -z "$FISH_VERSION" ]; then
-    if fish -c ""; then
-       command -v fish > /dev/null 2>&1 && exec fish
-    fi
+    command -v fish > /dev/null 2>&1 && exec fish
 fi
